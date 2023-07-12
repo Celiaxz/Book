@@ -1,1 +1,1 @@
-Hello, from the master branch!
+hello from the new branch
