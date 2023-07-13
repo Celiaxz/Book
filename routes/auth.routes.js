@@ -1,7 +1,9 @@
-const router = require("express").Router();
+// const User = require("../models/User.model");
+// const router = require("express").Router();
+// const bcrypt = require("bcryptjs");
 
-router.get("/", (req, res, next) => {
-  res.json("All good in here");
-});
+// router.get("/login", (req, res, next) => {
+//   res.render("authFolder/login");
+// });
 
-module.exports = router;
+// module.exports = router;
