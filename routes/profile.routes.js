@@ -6,4 +6,14 @@ router.get("/profile", (req, res, next) => {
   res.render("profile");
 });
 
+//Create book 
+router.get("/create-book", (req, res) => {
+  res.render("create-book");
+});
+
+//creating book
+router.post("/create-book"(req, res)=>{
+  
+})
+
 module.exports = router;
