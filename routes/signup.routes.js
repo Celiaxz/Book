@@ -3,7 +3,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 
 router.get("/", (req, res, next) => {
-    res.render("auth/signup");
+  res.render("authFolder/signup");
 });
 
 module.exports = router;
