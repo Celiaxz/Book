@@ -1,9 +1,9 @@
-const User = require("../models/User.model");
-const router = require("express").Router();
-const bcrypt = require("bcryptjs");
+// const User = require("../models/User.model");
+// const router = require("express").Router();
+// const bcrypt = require("bcryptjs");
 
-router.get("/login", (req, res, next) => {
-  res.send("All good in here");
-});
+// router.get("/login", (req, res, next) => {
+//   res.send("All good in here");
+// });
 
-module.exports = router;
+// module.exports = router;
