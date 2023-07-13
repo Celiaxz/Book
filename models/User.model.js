@@ -1,7 +1,7 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, default: mongoose } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const bookSchema = new Schema({
+const userSchema = new Schema({
   Author: {
     type: String,
     lowercase: true,
@@ -16,7 +16,7 @@ const bookSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "book",
   },
-  timestamps: true,
+  // timestamps: true,
   publishingDate: Number,
 });
 

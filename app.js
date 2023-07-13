@@ -18,11 +18,14 @@ require("./config/session")(app);
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
-const authRoutes = require("./routes/auth.routes");
-app.use("/auth", authRoutes);
+// const authRoutes = require("./routes/auth.routes");
+// app.use("/auth", authRoutes);
 
-const authRouter = require("./routes/auth.routes");
-app.use("/", authRouter);
+const signupRoutes = require("./routes/signup.routes");
+app.use("/signup", signupRoutes);
+
+// const authRouter = require("./routes/auth.routes");
+// app.use("/", authRouter);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
