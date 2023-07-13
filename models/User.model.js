@@ -1,24 +1,28 @@
-const { Schema, model, default: mongoose } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const userSchema = new Schema({
-  Author: {
-    type: String,
-    lowercase: true,
-    trim: true,
-  },
-  title: String,
-  genre: {
-    enum: ["Poetry, prose, Drama"],
-  },
-  description: String,
-  authorId: {
-    type: Schema.Types.ObjectId,
-    ref: "book",
-  },
-  // timestamps: true,
-  publishingDate: Number,
-});
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    // timestamps: true,
+  }
+
+  // this second object adds extra properties: `createdAt` and `updatedAt`
+);
 
 const User = model("User", userSchema);
 
