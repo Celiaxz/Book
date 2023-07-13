@@ -1,0 +1,19 @@
+<h1>Start Writing</h1>
+<h2><%= book.title %></h2>
+<form method="POST" action="/book/<%= book._id %>/update">
+  <input type="text" id="title" name="title" value="<%= book.title %>" required>
+  <button type="submit">Update Title</button>
+</form>
+<br>
+<form method="POST" action="/book/<%= book._id %>/delete">
+  <button type="submit">Delete Book</button>
+</form>
+<br>
+<form method="POST" action="/book/<%= book._id %>/save">
+  <textarea id="content" name="content" required><%= book.content %></textarea>
+  <br>
+  <button type="submit">Save</button>
+</form>
+</body>
+
+</html>
