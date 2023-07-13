@@ -20,8 +20,13 @@ const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 // const authRoutes = require("./routes/auth.routes");
 // app.use("/auth", authRoutes);
+
+const signupRoutes = require("./routes/signup.routes");
+app.use("/signup", signupRoutes);
+
 const loginRoutes = require("./routes/login.routes");
 app.use("/login", loginRoutes);
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
