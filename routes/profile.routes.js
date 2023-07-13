@@ -54,4 +54,18 @@ router.post("/book/:id/update", async (req, res) => {
   }
 });
 
+//delet Book
+router.post("/book/:id/delete", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletedBook = await Book.findByIdAndDelete(id);
+    // add other many actions
+
+    res.redirect("/profile");
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 module.exports = router;
