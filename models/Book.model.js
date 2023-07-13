@@ -16,7 +16,7 @@ const bookSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "book",
   },
-  timestamps: true,
+  // timestamps: true,
   publishingDate: Number,
 });
 
