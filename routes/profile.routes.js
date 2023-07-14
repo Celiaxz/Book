@@ -8,12 +8,12 @@ const {
   isLoggedOut,
 } = require("../middlewares/secure-routes.middlewear");
 
-router.get("/profile", (req, res, next) => {
-  res.render("profile");
+router.get("/profile", isLoggedIn, (req, res, next) => {
+  res.render("profile", { username: req.session.currentUser.username });
 });
 
 //Create book
-router.get("/create-book", (req, res) => {
+router.get("/create-book", isLoggedIn, (req, res) => {
   res.render("create-book");
 });
 
@@ -33,7 +33,7 @@ router.post("/create-book", async (req, res) => {
 });
 
 // book details and writing page
-router.get("/writing/:id", async (req, res) => {
+router.get("/writing/:id", isLoggedIn, async (req, res) => {
   try {
     const { id } = req.params;
 

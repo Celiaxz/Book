@@ -4,11 +4,11 @@ const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require("uuid");
 const { isLoggedOut } = require("../middlewares/secure-routes.middlewear");
 
-router.get("/signup", (req, res, next) => {
+router.get("/signup", isLoggedOut, (req, res, next) => {
   res.render("authFolder/signup");
 });
 
-router.post("/signup", async (req, res) => {
+router.post("/signup", isLoggedOut, async (req, res) => {
   try {
     const userId = uuidv4();
     const data = { ...req.body, userId };

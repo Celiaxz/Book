@@ -4,8 +4,11 @@
 const isLoggedIn = (req, res, next) => {
   console.log("loggedIn: ", req.session.currentUser);
   if (!req.session.currentUser) {
-    return res.redirect("/login");
+    console.log("isLoggedIn: redirect to login");
+    console.log("currentUser: ", req.session.currentUser);
+    return res.redirect("/");
   }
+  console.log("isLoggedIn: take me to next page");
   next();
 };
 
@@ -13,8 +16,9 @@ const isLoggedIn = (req, res, next) => {
 // redirects the user to the home page
 const isLoggedOut = (req, res, next) => {
   if (req.session.currentUser) {
-    return res.redirect("/");
+    return res.redirect("/profile");
   }
+  console.log("isLoggedOut: take me to next page");
   next();
 };
 
