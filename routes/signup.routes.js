@@ -1,6 +1,7 @@
 const User = require("../models/User.model");
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
+const { v4: uuidv4 } = require("uuid");
 
 router.get("/signup", (req, res, next) => {
   res.render("authFolder/signup");
@@ -8,7 +9,8 @@ router.get("/signup", (req, res, next) => {
 
 router.post("/signup", async (req, res) => {
   try {
-    const data = { ...req.body };
+    const userId = uuidv4();
+    const data = { ...req.body, userId };
     console.log("this is my data:", req.body);
     delete data.password;
     const salt = bcrypt.genSaltSync(13);

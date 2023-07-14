@@ -19,7 +19,7 @@ router.post("/login", async (req, res) => {
         delete loggedUser.passwordHash;
         req.session.userLogin = loggedUser;
         console.log(req.session);
-        res.redirect("/profile");
+        res.redirect("/profile/" + checkedUser.userId);
       } else {
         console.log("Incorect password or username");
         res.render("authFolder/login", {

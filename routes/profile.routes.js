@@ -2,21 +2,30 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const Book = require("../models/Book.model");
+const { v4: uuidv4 } = require("uuid");
 
-router.get("/profile", (req, res, next) => {
-  res.render("profile");
+router.get("/profile/:id", (req, res, next) => {
+  const id = req.params.id;
+  console.log("GET profile: ", id);
+  res.render("profile", { userId: id });
 });
 
 //Create book
-router.get("/create-book", (req, res) => {
-  res.render("create-book");
+router.get("/create-book/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("GET create-book: ", id);
+  res.render("create-book", { userId: id });
 });
 
 //creating book
 router.post("/create-book", async (req, res) => {
   console.log(" book req body: ", req.body);
+  const userId = req.body.userId;
+  const bookId = uuidv4();
+  console.log("POST create-book: ", userId);
   try {
-    const book = await Book.create(req.body);
+    const book = await Book.create({ ...req.body, userId, bookId });
+    console.log("Created Book: ", book);
     res.redirect("/writing/" + book._id);
   } catch (error) {
     console.log("error while creating book: ", error);
