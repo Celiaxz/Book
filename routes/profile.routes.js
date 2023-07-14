@@ -3,11 +3,19 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const Book = require("../models/Book.model");
 const { v4: uuidv4 } = require("uuid");
+const {
+  isLoggedIn,
+  isLoggedOut,
+} = require("../middlewares/secure-routes.middlewear");
 
 router.get("/profile/:id", (req, res, next) => {
   const id = req.params.id;
   console.log("GET profile: ", id);
-  res.render("profile", { userId: id });
+  res.render(
+    "profile",
+    { userId: id },
+    { userInSession: req.session.currentUser }
+  );
 });
 
 //Create book
@@ -46,6 +54,7 @@ router.get("/writing/:id", async (req, res) => {
     console.error(error);
   }
 });
+
 //Update Book
 router.post("/book/:id/update", async (req, res) => {
   try {
@@ -63,7 +72,7 @@ router.post("/book/:id/update", async (req, res) => {
   }
 });
 
-//delet Book
+//delete Book
 router.post("/book/:id/delete", async (req, res) => {
   try {
     const { id } = req.params;

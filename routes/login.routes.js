@@ -1,8 +1,9 @@
 const User = require("../models/User.model");
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
+const { isLoggedOut } = require("../middlewares/secure-routes.middlewear");
 
-router.get("/login", (req, res, next) => {
+router.get("/login", (req, res) => {
   res.render("authFolder/login");
 });
 
@@ -17,8 +18,8 @@ router.post("/login", async (req, res) => {
       if (bcrypt.compareSync(userLogin.password, checkedUser.passwordHash)) {
         const loggedUser = { ...checkedUser._doc };
         delete loggedUser.passwordHash;
-        req.session.userLogin = loggedUser;
-        console.log(req.session);
+        req.session.currentUser = loggedUser;
+        // console.log(req.session);
         res.redirect("/profile/" + checkedUser.userId);
       } else {
         console.log("Incorect password or username");

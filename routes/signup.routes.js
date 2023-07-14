@@ -2,6 +2,7 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require("uuid");
+const { isLoggedOut } = require("../middlewares/secure-routes.middlewear");
 
 router.get("/signup", (req, res, next) => {
   res.render("authFolder/signup");
