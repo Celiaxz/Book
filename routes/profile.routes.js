@@ -2,21 +2,30 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const Book = require("../models/Book.model");
+const { v4: uuidv4 } = require("uuid");
+const {
+  isLoggedIn,
+  isLoggedOut,
+} = require("../middlewares/secure-routes.middlewear");
 
-router.get("/profile", (req, res, next) => {
-  res.render("profile");
+router.get("/profile", isLoggedIn, (req, res, next) => {
+  res.render("profile", { username: req.session.currentUser.username });
 });
 
 //Create book
-router.get("/create-book", (req, res) => {
+router.get("/create-book", isLoggedIn, (req, res) => {
   res.render("create-book");
 });
 
 //creating book
 router.post("/create-book", async (req, res) => {
-  console.log(" book req body: ", req.body);
+  console.log(" book req body: ", req.session);
+  const userId = req.session.currentUser.userId;
+  console.log("POST create-book: ", userId);
+  const bookId = uuidv4();
   try {
-    const book = await Book.create(req.body);
+    const book = await Book.create({ ...req.body, userId, bookId });
+    console.log("Created Book: ", book);
     res.redirect("/writing/" + book._id);
   } catch (error) {
     console.log("error while creating book: ", error);
@@ -24,7 +33,7 @@ router.post("/create-book", async (req, res) => {
 });
 
 // book details and writing page
-router.get("/writing/:id", async (req, res) => {
+router.get("/writing/:id", isLoggedIn, async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -37,6 +46,7 @@ router.get("/writing/:id", async (req, res) => {
     console.error(error);
   }
 });
+
 //Update Book
 router.post("/book/:id/update", async (req, res) => {
   try {
@@ -54,7 +64,7 @@ router.post("/book/:id/update", async (req, res) => {
   }
 });
 
-//delet Book
+//delete Book
 router.post("/book/:id/delete", async (req, res) => {
   try {
     const { id } = req.params;

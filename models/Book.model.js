@@ -9,6 +9,14 @@ const bookSchema = new Schema({
   genre: {
     enum: ["Poetry, prose, Drama"],
   },
+  bookId: {
+    type: String,
+    required: true,
+  },
+  userId: {
+    type: String,
+    required: true,
+  },
   description: String,
   publishingDate: Number,
   content: String,
