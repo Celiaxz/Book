@@ -77,5 +77,9 @@ router.post("/book/:id/delete", async (req, res) => {
     console.error(error);
   }
 });
+// library
+router.get("/library", (req, res) => {
+  res.render("bookSearch");
+});
 
 module.exports = router;
