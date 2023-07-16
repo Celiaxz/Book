@@ -1,0 +1,19 @@
+<!-- views/bookSearchResult.ejs -->
+<h1>Book Search Result:</h1>
+<div class="book-search-result">
+  <% books.forEach((book) => { %>
+  <div class="book-item">
+    <h2><%- book.title %></h2>
+    <p><%- book.author_name %></p>
+    <% if (book.cover) { %>
+    <img src="<%- book.cover %>" alt="Book Cover" class="book-cover" />
+    <% } else { %>
+    <img src="/images/cover_not_found.jpg" class="book-cover" />
+    <% } %>
+    <p>Publish Year: <%= book.publishYear %></p>
+    <% if (book.coverId) { %>
+    <a href="/library/<%- book.key %>/<%- book.coverId %>" name="bookData" value=<%= book.author_name  %>target="_blank">Preview</a>
+    <% } %>
+  </div>
+  <% }) %>
+</div>
