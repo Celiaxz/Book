@@ -1,7 +1,61 @@
-<h2>Welcome, <%= username %>!</h2>
-<h2> About yourself</h2>
-<p>Here you can manage your books.</p>
-<a href="/create-book">Create a Book</a>
-<button type="submit">Create a book</button>
-<button type="submit">Read a book</button>
-<Enable other Users to Read your book
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" />
+<div class="wrapper">
+  <div class="section">
+    <div class="top_navbar">
+      <div class="hamburger">
+        <a href="#">
+          <i class="fas fa-bars"></i>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <% if (active === "home") { %>
+      <%- include ('./partials/homepage.ejs') %>
+      <% } %>
+      <% if (active === "book") { %>
+      <%- include('./partials/editor.ejs', {book: selectedBook}) %>
+      <% } %>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg" alt="profile_picture" />
+      <h3><%= user.username %></h3>
+      <p>Designer</p>
+    </div>
+    <ul>
+      <li>
+        <a href="/profile" class="<%= active === 'home' ? 'active': '' %>">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span class="item">Home</span>
+        </a>
+        <% if (myBooks.length > 0 || readOnlyBooks.length > 0) { %>
+        <div class="sidebarLibrary">
+          <%- include('./partials/sidebar-library.ejs', {myBooks, readOnlyBooks}) %>
+        </div>
+        <% } %>
+      </li>
+      <li>
+        <a href="/library" class="<%= active === 'home' || active === 'book' ? 'active': '' %>">
+          <span class="icon"><i class="fas fa-desktop"></i></span>
+          <span class="item">Library</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="fas fa-cog"></i></span>
+          <span class="item">Settings</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  hamburger.addEventListener("click", function() {
+    const classes = document.querySelector("body").classList;
+    classes.toggle("active");
+  });
+</script>

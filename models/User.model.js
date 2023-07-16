@@ -18,11 +18,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    userId: {
-      type: String,
-      required: true,
+    savedBooks: {
+      type: [String],
+      default: [],
     },
-    // timestamps: true,
   }
 
   // this second object adds extra properties: `createdAt` and `updatedAt`

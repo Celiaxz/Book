@@ -1,0 +1,29 @@
+<ul class="myLibrary">
+  <p>My Books</p>
+  <%-
+    console.log("MyBooks myLibrary: ", myBooks);
+    %>
+  <% myBooks.forEach((book) => { %>
+  <li class="myBook">
+    <a class="bookTitle" href="/profile/book/<%= book._id %>">
+      <span><%- book.title%></span>
+      <!-- <span ><i class="fas fa-pencil"></i></span> -->
+    </a>
+    <a class="edit" href="/profile/book/<%= book._id %>">
+      <!-- <span ><i class="fas fa-pencil"></i></span> -->
+      <i id="left-icon" class="material-symbols-outlined ">edit</i>
+    </a>
+    <a class="lock-icon" href="/profile/lock/<%= book._id %>">
+      <span><i class="fas <%= book.isPublic ? 'fa-unlock': 'fa-lock' %>"></i></span>
+    </a>
+  </li>
+  <% }) %>
+  <p>Saved Books</p>
+  <% readOnlyBooks.forEach((book) => { %>
+  <li class="readOnlyBooks">
+    <a class="bookTitle" href="/profile/book/<%= book._id %>">
+      <span><%- book.title%></span>
+    </a>
+  </li>
+  <% }) %>
+</ul>
