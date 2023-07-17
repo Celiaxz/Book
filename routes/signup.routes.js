@@ -13,7 +13,7 @@ router.post("/signup", uploader.single("profileImage"), isLoggedOut, async (req,
   const image = req.file.path;
   try {
     const userId = uuidv4();
-    const data = { ...req.body, userId, profileImage: image };
+    const data = { ...req.body, userId, imgUrl: image };
     console.log("this is my data:", req.body);
     delete data.password;
     const salt = bcrypt.genSaltSync(13);

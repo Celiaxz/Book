@@ -20,8 +20,10 @@
   </div>
   <div class="sidebar">
     <div class="profile">
-      <img src="<%- user.profileImage %>" alt="profile_picture">
-        <button type="submit">Upload</button>
+      <img src="<%- user.profileImage %>" alt="profile_picture" style="transform: scale(0.5);">
+      <form action="/edit-profile" method="post" enctype="multipart/form-data">
+        <input type="file" name="profileImage" id="editProfileInput" style="display: none;" onchange="this.form.submit()">
+        <label for="editProfileInput" class="editProfileButton">Edit</label>
       </form>
       <h3><%= user.username %></h3>
       <p>Designer</p>
@@ -60,4 +62,18 @@
     const classes = document.querySelector("body").classList;
     classes.toggle("active");
   });
+</script>
+
+<script>
+  const editProfileButton = document.getElementById('editProfileButton');
+  const editProfileInput = document.getElementById('editProfileInput');
+  const editProfileForm = document.getElementById('editProfileForm');
+
+  editProfileButton.addEventListener('click', () => {
+    editProfileInput.click();
+  });
+
+  function handleFileSelection(event) {
+    editProfileForm.submit();
+  }
 </script>
