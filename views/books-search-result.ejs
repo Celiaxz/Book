@@ -3,12 +3,12 @@
 <div class="book-search-result">
   <% books.forEach((book) => { %>
   <div class="book-item">
-    <h2><%- book.title %></h2>
+    <h2 class="book-name"><%- book.title %></h2>
     <p><%- book.author_name %></p>
     <% if (book.cover) { %>
     <img src="<%- book.cover %>" alt="Book Cover" class="book-cover" />
     <% } else { %>
-    <img src="/images/cover_not_found.jpg" class="book-cover" />
+    <img src="/images/cover_not_found.jpg" class="book-coverNotFound" />
     <% } %>
     <p>Publish Year: <%= book.publishYear %></p>
     <% if (book.coverId) { %>

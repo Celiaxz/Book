@@ -128,3 +128,78 @@ body.active .wrapper .section {
   width: 24px;
   height: 24px;
 }
+/* librarysearchBok */
+.book-searchMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background-color: black;
+}
+.book-searchMain {
+  color: white;
+}
+.searchBox {
+  width: 60%;
+  display: flex;
+}
+.searchBox input {
+  flex: 1;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border: 1px transparent;
+  padding-left: 1rem;
+  font-size: 16px;
+}
+/* .searchBox input::after {
+  border: 1px solid rgb(205, 90, 90);
+} */
+.searchBox button {
+  padding: 1rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border: 1px transparent;
+  /* padding-left: 1rem; */
+  width: fit-content;
+}
+
+/* mediaquery searchBox */
+/* @media only screen and (max-width: 600px) {
+  .main {
+    padding: 1rem;
+  }
+  .main h1 {
+    text-align: center;
+  }
+  .searchBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .searchBox input {
+    flex: 1;
+    border-radius: 2rem;
+    width: 100%;
+    border: 1px transparent;
+    padding: 1rem;
+    font-size: 16px;
+  }
+  .searchBox input::after {
+    border: 1px solid rgb(205, 90, 90);
+  }
+  .searchBox button {
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    border: 1px transparent;
+    width: fit-content;
+  }
+} */
+
+/* book Search result */
