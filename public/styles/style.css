@@ -207,11 +207,11 @@ body.active .wrapper .section {
   color: #ffffff;
   min-height: 100vh;
   background-color: black;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
-.mainBookSearch h1 {
+/* .mainBookSearch h1 {
   margin-bottom: 2rem;
-}
+} */
 .book-search-result {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
