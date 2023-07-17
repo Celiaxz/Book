@@ -1,5 +1,5 @@
 <h2>Signup</h2>
-<form action="/signup" method="POST">
+<form action="/signup" method="POST" enctype="multipart/form-data">
 
   <label> Username
     <input type="text" name="username" placeholder="input username" required />
@@ -12,6 +12,9 @@
   <label> Password
     <input type="password" name="password" required />
   </label>
+
+  <label>Upload a profile picture:
+    <input type="file" id="profileImage" name="profileImage" accept="image/png, image/jpg"/>
 
   <button type="submit">Create account</button>
 
