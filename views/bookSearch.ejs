@@ -1,10 +1,10 @@
 <!-- views/bookSearch.ejs -->
-<div class="book-search">
+<div class="book-searchMain">
   <h1>Check out some other books in this Library</h1>
-  <form action="/library" method="POST">
-    <label class="form-class" for="books">
-      <input type="text" name="bookTitle" class="book-search" placeholder="Enter a book title" />
-    </label>
+  <form action="/library" method="POST" class="searchBox">
+
+    <input type="text" name="bookTitle" class="book-search" placeholder="Enter a book title" />
+
     <button type="submit">Search for Book</button>
   </form>
 </div>
