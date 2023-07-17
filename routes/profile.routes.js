@@ -87,19 +87,10 @@ router.get("/profile/user/logout", isLoggedIn, async (req, res, next) => {
 
 router.get("/profile/user/delete", isLoggedIn, async (req, res, next) => {
   const { _id } = req.session.currentUser;
-  const bookId = req.params.bookId;
-  const book = await Book.findById(bookId);
-  console.log("bookId: ", bookId);
-  console.log("BOOKS: ", book);
-  const isPublicToggle = !book.isPublic;
-  if (_id === book.userId) {
-    await Book.findByIdAndUpdate(
-      bookId,
-      { isPublic: isPublicToggle },
-      { new: true }
-    );
-  }
-  res.redirect("/profile/home");
+  await User.findByIdAndDelete(_id);
+  await Book.deleteMany({ userId: _id });
+  delete req.session.currentUser;
+  res.redirect("/");
 });
 
 //Create book
