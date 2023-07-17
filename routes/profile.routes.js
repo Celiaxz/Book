@@ -79,6 +79,29 @@ router.get("/profile/lock/:bookId", isLoggedIn, async (req, res, next) => {
   res.redirect("/profile/home");
 });
 
+router.get("/profile/user/logout", isLoggedIn, async (req, res, next) => {
+  console.log("Logging user out");
+  delete req.session.currentUser;
+  res.redirect("/");
+});
+
+router.get("/profile/user/delete", isLoggedIn, async (req, res, next) => {
+  const { _id } = req.session.currentUser;
+  const bookId = req.params.bookId;
+  const book = await Book.findById(bookId);
+  console.log("bookId: ", bookId);
+  console.log("BOOKS: ", book);
+  const isPublicToggle = !book.isPublic;
+  if (_id === book.userId) {
+    await Book.findByIdAndUpdate(
+      bookId,
+      { isPublic: isPublicToggle },
+      { new: true }
+    );
+  }
+  res.redirect("/profile/home");
+});
+
 //Create book
 router.get("/create-book", isLoggedIn, (req, res) => {
   res.render("create-book");
@@ -98,20 +121,20 @@ router.post("/create-book", async (req, res) => {
   }
 });
 
-// book details and writing page
-router.get("/writing/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
+// // book details and writing page
+// router.get("/writing/:id", async (req, res) => {
+//   try {
+//     const { id } = req.params;
 
-    const book = await Book.findById(id).populate("author");
-    //able to create books with the correct author reference and
-    //retrieve also authors  information when rending the writing view
-    // console.log("BOOK: ", data);
-    res.render("writing", book);
-  } catch (error) {
-    console.error(error);
-  }
-});
+//     const book = await Book.findById(id).populate("author");
+//     //able to create books with the correct author reference and
+//     //retrieve also authors  information when rending the writing view
+//     // console.log("BOOK: ", data);
+//     res.render("writing", book);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// });
 
 //Update Book
 router.post("/book/:id/update", async (req, res) => {
