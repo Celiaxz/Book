@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const axios = require("axios");
 const url = "https://openlibrary.org/search.json?title=";
+const { isLoggedIn } = require("../middlewares/secure-routes.middlewear");
 
-router.get("/library", (req, res) => {
+router.get("/library", isLoggedIn, (req, res) => {
   res.render("bookSearch");
 });
 
@@ -24,7 +25,7 @@ router.get("/library", (req, res) => {
 //   }
 // });
 
-router.post("/library", async (req, res, next) => {
+router.post("/library", isLoggedIn, async (req, res, next) => {
   try {
     // const myrequest = req.body;
     // const urlString = url + myrequest.bookTitle;
@@ -50,7 +51,7 @@ router.post("/library", async (req, res, next) => {
   }
 });
 
-router.get("/library/:key/:coverId", async (req, res) => {
+router.get("/library/:key/:coverId", isLoggedIn, async (req, res) => {
   try {
     console.log("In preview");
     const key = req.params.key;
