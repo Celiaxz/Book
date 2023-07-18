@@ -1,15 +1,18 @@
-<h1>Hello world </h1>
-<h1>Log In</h1>
-<form action="/login" method="POST">
-  <label>Username:
-    <input required name="username">
-  </label>
-  <label>Password:
-    <input type="password" required name="password">
-  </label>
-  <button type="submit">Log In</button>
-</form>
-
+<div class="row align-items-center border border-primary justify-content-center flex-row d-flex">
+  <div class="col-4 p-6  ">
+    <h1>Hello world </h1>
+    <h1>Log In</h1>
+    <form action="/login" method="POST">
+      <label class="row mb-3">Username:
+        <input required name="username" class="form-control">
+      </label>
+      <label class="row mb-3">Password:
+        <input type="password" required name="password" class="form-control">
+      </label>
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+  </div>
+</div>
 <% if (typeof errMessage !== "undefined") { %>
 <p><%= errMessage %></p>
 <% } %>
