@@ -59,6 +59,7 @@ body {
   color: rgb(241, 237, 237);
   font-size: 16px;
   position: relative;
+  text-decoration: none;
 }
 
 .wrapper .sidebar ul li a .icon {
@@ -115,7 +116,7 @@ body {
   line-height: 28px;
 }
 body.active .wrapper .sidebar {
-  left: -225px;
+  left: -250px;
 }
 
 body.active .wrapper .section {
@@ -149,8 +150,10 @@ body.active .wrapper .section {
   min-height: 100vh;
   background-color: lightgray;
 }
-.book-searchMain {
-  color: darkgray;
+.book-searchMain,
+.book-search {
+  color: black;
+  font-weight: 800;
 }
 .searchBox {
   width: 60%;
@@ -349,4 +352,9 @@ body.active .wrapper .section {
 
 .card-text {
   font-size: 1.2rem;
+}
+
+.book-header {
+  color: white;
+  padding-top: 5px;
 }
