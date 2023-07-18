@@ -80,7 +80,7 @@
       const hiddenInput = document.querySelector('input[name=data]'); // get our hidden input value and set the editorText on it.
       hiddenInput.value = editorText // the value we set will be availabe to our route in req.body.data
     };
-    const readOnly = <%= isReadOnly %>;
+    const readOnly = isReadOnly;
 
     if (readOnly) {
       const quill = new Quill('#editor', {
