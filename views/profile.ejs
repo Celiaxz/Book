@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" />
 <div class="wrapper">
@@ -20,7 +21,16 @@
   </div>
   <div class="sidebar">
     <div class="profile">
-      <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg" alt="profile_picture" />
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label>
+          <input type="file" id="profileImage" name="profileImage" accept="image/png, image/jpg" style="display: none;" onchange="displayImage(event)"/>
+          <img id="previewImage" src="<%- user.image %>" alt="Profile Picture" />
+        </label>
+        <button type="button" id="uploadButton" class="btn btn-info" onclick="profileImage.click()">Edit</button>
+      </form>
+      
+
+
       <h3><%= user.username %></h3>
       <p>Designer</p>
     </div>
@@ -70,4 +80,19 @@
     const classes = document.querySelector("body").classList;
     classes.toggle("active");
   });
+</script>
+
+<script>
+  function displayImage(event) {
+    const previewImage = document.getElementById('previewImage');
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        previewImage.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
 </script>

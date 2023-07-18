@@ -18,6 +18,8 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    image: String
+    ,
     savedBooks: {
       type: [String],
       default: [],
