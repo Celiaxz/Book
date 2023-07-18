@@ -266,3 +266,69 @@ body.active .wrapper .section {
   cursor: pointer;
   text-decoration: none;
 }
+
+/* previewbookStyle */
+
+/* .grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  min-height: 100vh;
+  background-color: black; /* Dark gray background color */
+  padding: 20px; /* Add some padding around the content */
+}
+
+/* Center the cover image and description side by side */
+.cover-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cover-image {
+  flex: 1;
+  text-align: center;
+  margin-right: 20px; /* Add some space between the cover image and description */
+}
+
+/* Style for the cover image itself */
+.book-cover {
+  /* Adjust the height of the cover image */
+  border-radius: 10px; /* Rounded corners for the cover image */
+}
+
+/* Style for the description area */
+.description {
+  flex: 1;
+  text-align: center;
+}
+
+/* Style for the description text */
+.description p {
+  color: #fff; /* White text color for description */
+  font-size: 18px;
+}
+
+/* Style for the preview URL area */
+.preview-url {
+  text-align: center;
+  color: #fff; /* White text color for preview URLs */
+  font-size: 16px;
+}
+
+/* Style for the numbered preview URLs */
+.preview-url p {
+  margin: 5px;
+}
+
+/* Style for the links in the preview URL area */
+.preview-url a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none;
+}
+
+/* Add hover effect for the links */
+.preview-url a:hover {
+  text-decoration: underline;
+} */
