@@ -2,7 +2,7 @@
   <div class="grid-container">
     <div class="cover-description">
       <div class="cover-image">
-        <h2><%- book.title %></h2>
+        <h2 class="bookLib-title"><%- book.title %></h2>
         <% if (book.cover) { %>
         <img src="<%- book.cover %>" alt="Book Cover" class="book-cover" />
         <% } else { %>
@@ -11,7 +11,7 @@
       </div>
       <div class="description">
         <% if (book.description) { %>
-        <p class="description-title">Description:</p>
+        <h3 class="description-title">Description</h3>
         <p class="description-text"><%= book.description %></p>
         <% } %>
       </div>

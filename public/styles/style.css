@@ -288,45 +288,50 @@ body.active .wrapper .section {
 .cover-image {
   flex: 1;
   text-align: center;
-  margin-right: 20px; /* Add some space between the cover image and description */
+  margin-right: 20px;
+}
+.cover-image h2 {
+  font-size: 2em;
+  color: white;
 }
 
-/* Style for the cover image itself */
 .book-cover {
-  border-radius: 10px; /* Rounded corners for the cover image */
+  border-radius: 10px;
 }
 
-/* Style for the description area */
 .description {
   flex: 1;
   text-align: center;
 }
 
-/* Style for the description text */
-.description p {
-  color: #fff; /* White text color for description */
-  font-size: 18px;
+.description-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
 }
 
-/* Style for the preview URL area */
+/* Style for the description text */
+.description-text {
+  color: #fff;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
 .preview-url {
   text-align: center;
   color: #fff;
-  font-size: 16px;
+  font-size: 1em;
 }
 
-/* Style for the numbered preview URLs */
 .preview-url p {
   margin: 10px;
 }
 
-/* Style for the links in the preview URL area */
 .preview-url a {
-  color: #007bff; /* Blue link color */
+  color: #007bff;
   text-decoration: none;
 }
 
-/* Add hover effect for the links */
 .preview-url a:hover {
   text-decoration: underline;
 }
