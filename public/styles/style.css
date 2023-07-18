@@ -341,3 +341,12 @@ body.active .wrapper .section {
   text-decoration: underline;
   color: #0d6efd;
 }
+
+/* preview style */
+.card-title {
+  font-size: 3rem;
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
