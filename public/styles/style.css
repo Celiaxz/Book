@@ -220,7 +220,7 @@ body.active .wrapper .section {
   color: #ffffff;
   min-height: 100vh;
   background-color: black;
-  /* padding: 2rem;  */
+  padding: 20px;
 }
 .mainBookSearch h1 {
   margin-bottom: 2rem;
@@ -242,13 +242,13 @@ body.active .wrapper .section {
 }
 
 .book-search-result h2 {
-  font-size: 20px;
+  font-size: 1.5em;
 }
 
 .book-search-result img {
   max-width: 180px;
   max-height: 276px;
 }
-.book-search-result p {
-  font-size: 10px;
+.book-search-result h4 {
+  font-size: 0.9em;
 }

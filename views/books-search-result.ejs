@@ -1,11 +1,11 @@
 <!-- views/bookSearchResult.ejs -->
 <div class="mainBookSearch">
-  <h1>Book Search Result:</h1>
+  <h1>Book search results :</h1>
   <div class="book-search-result">
     <% books.forEach((book) => { %>
     <div class="book-item">
       <h2 class="book-name"><%- book.title %></h2>
-      <p><%- book.author_name %></p>
+      <h4><%- book.author_name %></h4>
       <% if (book.cover) { %>
       <img src="<%- book.cover %>" alt="Book Cover" class="book-cover" />
       <% } else { %>
