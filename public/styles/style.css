@@ -17,9 +17,9 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 225px;
+  width: 250px;
   height: 100%;
-  /* padding: 20px 0; */
+  padding: 20px;
   transition: all 0.5s ease;
 }
 
@@ -38,12 +38,18 @@ body {
 
 .wrapper .sidebar .profile h3 {
   color: #ffffff;
-  margin: 10px 0 5px;
+  /* margin: 10px 0 5px; */
+  margin: 10px auto;
 }
 
 .wrapper .sidebar .profile p {
   color: rgb(206, 240, 253);
   font-size: 14px;
+}
+
+.wrapper .sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
 .wrapper .sidebar ul li a {
@@ -108,7 +114,6 @@ body {
   padding: 50px;
   line-height: 28px;
 }
-
 body.active .wrapper .sidebar {
   left: -225px;
 }
@@ -121,12 +126,14 @@ body.active .wrapper .section {
 .myBook {
   display: flex;
   flex-direction: row;
+
+  align-items: center;
 }
 
 .edit,
 .lock-icon {
-  width: 24px;
-  height: 24px;
+  font-size: 16px;
+  background-color: aqua;
 }
 /* librarysearchBok */
 .book-searchMain {
@@ -158,14 +165,14 @@ body.active .wrapper .section {
 /* .searchBox input::after {
   border: 1px solid rgb(205, 90, 90);
 } */
-.searchBox button {
+/* .searchBox button {
   padding: 1rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   border: 1px transparent;
   /* padding-left: 1rem; */
-  width: fit-content;
-}
+/* width: fit-content; */
+/* } */
 
 /* mediaquery searchBox */
 /* @media only screen and (max-width: 600px) {
@@ -203,29 +210,29 @@ body.active .wrapper .section {
 } */
 
 /* book Search result */
-.mainBookSearch {
+/* .mainBookSearch {
   color: #ffffff;
   min-height: 100vh;
   background-color: black;
-  /* padding: 2rem; */
-}
+  /* padding: 2rem; 
+} */
 /* .mainBookSearch h1 {
   margin-bottom: 2rem;
 } */
-.book-search-result {
+/* .book-search-result {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
-}
-.book-item {
+} */
+/* .book-item {
   grid-column: span 1 / span 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
+} */
 
-.book-search-result h2 {
+/* .book-search-result h2 {
   font-size: 20px;
 }
 
@@ -235,4 +242,4 @@ body.active .wrapper .section {
 }
 .book-search-result p {
   font-size: 10px;
-}
+} */
