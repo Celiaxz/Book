@@ -1,17 +1,31 @@
-<div class="book-item">
-  <h2><%- book.title %></h2>
-  <% if (book.cover) { %>
-  <img src="<%- book.cover %>" alt="Book Cover" class="book-cover" />
-  <% } else { %>
-  <img src="/images/cover_not_found.jpg" class="book-cover" />
-  <% } %>
-  <% if(book.description){%>
-  <p>Description: <%= book.description %></p>
-  <% } %>
-  <% if(book.links){%>
-  <% book.links.forEach((link) => { %>
-  <a href="<%- link.url %>" name="bookData" value=<%= book.author_name  %>target="_blank"><%- link.title  %></a>
-  <br>
-  <% }) %>
-  <% } %>
+<div class="Preview-Book">
+  <div class="grid-container">
+    <div class="cover-description">
+      <div class="cover-image">
+        <h2 class="bookLib-title"><%- book.title %></h2>
+        <% if (book.cover) { %>
+        <img src="<%- book.cover %>" alt="Book Cover" class="book-cover" />
+        <% } else { %>
+        <img src="/images/cover_not_found.jpg" class="book-cover" />
+        <% } %>
+      </div>
+      <div class="description">
+        <% if (book.description) { %>
+        <h3 class="description-title">Description</h3>
+        <p class="description-text"><%= book.description %></p>
+        <% } %>
+      </div>
+    </div>
+    <div class="preview-url">
+      <% if (book.links) { %>
+      <div class="link-grid">
+        <% book.links.forEach((link, index) => { %>
+        <div class="link-item">
+          <strong><%- index + 1 %>.</strong> <a href="<%- link.url %>" name="bookData" value=<%= book.author_name %> target="_blank"><%- link.title %></a>
+        </div>
+        <% }) %>
+      </div>
+      <% } %>
+    </div>
+  </div>
 </div>

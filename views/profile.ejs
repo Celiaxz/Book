@@ -24,7 +24,7 @@
       <h3><%= user.username %></h3>
       <p>Designer</p>
     </div>
-    <ul>
+    <ul class="navBarSection">
       <li>
         <a href="/profile" class="<%= active === 'home' ? 'active': '' %>">
           <span class="icon"><i class="fas fa-home"></i></span>
@@ -36,7 +36,7 @@
         </div>
         <% } %>
       </li>
-      <li>
+      <li class="navSetting">
         <a href="/library" class="<%= active === 'home' || active === 'book' ? 'active': '' %>">
           <span class="icon"><i class="fas fa-desktop"></i></span>
           <span class="item">Library</span>
@@ -71,3 +71,24 @@
     classes.toggle("active");
   });
 </script>
+
+
+
+<!-- //grid-column: span 1 / span 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+/* border: 2px solid white; */
+background-color: #242222;
+}
+
+book-item {
+  grid-column: span 1 / span 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* border: 2px solid white; */
+  background-color: #242222;
+  padding: 5px; -->
