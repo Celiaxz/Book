@@ -2,6 +2,7 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const Book = require("../models/Book.model");
+const uploader = require('../config/cloudinary.config.js');
 
 const {
   isLoggedIn,
@@ -99,18 +100,20 @@ router.get("/create-book", isLoggedIn, (req, res) => {
 });
 
 //creating book
-router.post("/create-book", async (req, res) => {
+router.post("/create-book", uploader.single("imgUrl"), async (req, res) => {
+  const image = req.file.path;
   console.log(" book req body: ", req.session);
   const userId = req.session.currentUser._id;
   console.log("POST create-book: ", req.body);
   try {
-    const book = await Book.create({ ...req.body, userId, isPublic: true });
+    const book = await Book.create({ ...req.body, userId, isPublic: true, imgUrl: image });
     console.log("Created Book: ", book);
     res.redirect("/profile/book/" + book._id);
   } catch (error) {
     console.log("error while creating book: ", error);
   }
 });
+
 
 // // book details and writing page
 // router.get("/writing/:id", async (req, res) => {
@@ -126,6 +129,7 @@ router.post("/create-book", async (req, res) => {
 //     console.error(error);
 //   }
 // });
+
 
 //Update Book
 router.post("/book/:id/update", async (req, res) => {
