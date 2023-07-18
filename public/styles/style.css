@@ -317,21 +317,27 @@ body.active .wrapper .section {
   margin-top: 10px;
 }
 
-.preview-url {
-  text-align: center;
-  color: #fff;
-  font-size: 1em;
+/* style for link */
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
 }
 
-.preview-url p {
-  margin: 10px;
+/* Style for each link item */
+.link-item {
+  color: white;
+  padding: 5px;
+  border-radius: 5px; /* Rounded corners for the link items */
 }
 
-.preview-url a {
-  color: #007bff;
+.link-item a {
+  color: white;
   text-decoration: none;
 }
 
-.preview-url a:hover {
+.link-item a:hover {
   text-decoration: underline;
+  color: #0d6efd;
 }

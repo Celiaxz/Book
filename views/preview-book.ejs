@@ -18,9 +18,13 @@
     </div>
     <div class="preview-url">
       <% if (book.links) { %>
-      <% book.links.forEach((link, index) => { %>
-      <p><strong><%- index + 1 %>.</strong> <a href="<%- link.url %>" name="bookData" value=<%= book.author_name %> target="_blank"><%- link.title %></a></p>
-      <% }) %>
+      <div class="link-grid">
+        <% book.links.forEach((link, index) => { %>
+        <div class="link-item">
+          <strong><%- index + 1 %>.</strong> <a href="<%- link.url %>" name="bookData" value=<%= book.author_name %> target="_blank"><%- link.title %></a>
+        </div>
+        <% }) %>
+      </div>
       <% } %>
     </div>
   </div>
