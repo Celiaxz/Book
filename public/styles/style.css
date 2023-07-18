@@ -269,22 +269,22 @@ body.active .wrapper .section {
 
 /* previewbookStyle */
 
-/* .grid-container {
+.grid-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
   min-height: 100vh;
-  background-color: black; /* Dark gray background color */
-  padding: 20px; /* Add some padding around the content */
+  background-color: black;
+  padding: 20px;
 }
 
 /* Center the cover image and description side by side */
-.cover-description {
+/* .cover-description {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
+} */
 
 .cover-image {
   flex: 1;
@@ -331,4 +331,4 @@ body.active .wrapper .section {
 /* Add hover effect for the links */
 .preview-url a:hover {
   text-decoration: underline;
-} */
+}
