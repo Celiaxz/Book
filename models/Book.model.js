@@ -20,7 +20,6 @@ const bookSchema = new Schema({
   description: String,
   publishingDate: Number,
   content: String,
-  imgUrl: String,
 });
 
 const Book = model("Book", bookSchema);
