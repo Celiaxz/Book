@@ -18,7 +18,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    image: String
+    imageUrl: String
     ,
     savedBooks: {
       type: [String],

@@ -11,16 +11,16 @@ router.get("/signup", isLoggedOut, (req, res, next) => {
 
 const defaultProfileImage = './images/LOGO.png';
 
-router.post("/signup", uploader.single("profileImage"), isLoggedOut, async (req, res) => {
+router.post("/signup", uploader.single("imageUrl"), isLoggedOut, async (req, res) => {
   try {
     const userId = uuidv4();
     const data = { ...req.body, userId };
 
     if (req.file) {
-      const image = req.file.path;
-      data.image = image;
+      const imageUrl = req.file.path;
+      data.imageUrl = imageUrl;
     } else {
-      data.image = defaultProfileImage; // Assign the default profile image
+      data.imageUrl = defaultProfileImage; // Assign the default profile image
     }
     console.log("This is my data:", data);
     delete data.password;

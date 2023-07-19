@@ -23,10 +23,10 @@
     <div class="profile">
       <form action="/upload" method="POST" enctype="multipart/form-data">
         <label>
-          <input type="file" id="profileImage" name="profileImage" accept="image/png, image/jpg" style="display: none;" onchange="displayImage(event)"/>
-          <img id="previewImage" src="<%- user.image %>" alt="Profile Picture" />
+          <input type="file" id="imageUrl" name="imageUrl" accept="image/png, image/jpg" style="display: none;" onchange="displayImage(event)"/>
+          <img id="previewImage" src="<%- user.imageUrl %>" alt="Profile Picture" />
         </label>
-        <button type="button" id="uploadButton" class="btn btn-info" onclick="profileImage.click()">Edit</button>
+        <button type="button" id="uploadButton" class="btn btn-info" onclick="imageUrl.click()">Edit</button>
       </form>
       
 
