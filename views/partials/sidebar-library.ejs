@@ -1,11 +1,11 @@
 <ul class="myLibrary">
-  <p>My Books</p>
+  <p class="book-header">My Books</p>
   <%-
     console.log("MyBooks myLibrary: ", myBooks);
     %>
   <% myBooks.forEach((book) => { %>
   <li class="myBook">
-    <a class="bookTitle" href="/profile/book/<%= book._id %>">
+    <a class="bookTitle <%=  book._id === selectedBook._id  ? 'active': '' %>" href="/profile/book/<%= book._id %>">
       <span><%- book.title%></span>
       <!-- <span ><i class="fas fa-pencil"></i></span> -->
     </a>
@@ -18,10 +18,10 @@
     </a>
   </li>
   <% }) %>
-  <p>Saved Books</p>
+  <p class="book-header">Saved Books</p>
   <% readOnlyBooks.forEach((book) => { %>
   <li class="readOnlyBooks">
-    <a class="bookTitle" href="/profile/book/<%= book._id %>">
+    <a class="bookTitle <%= book._id === selectedBook._id  ? 'active': '' %>" href="/profile/book/<%= book._id %>">
       <span><%- book.title%></span>
     </a>
   </li>

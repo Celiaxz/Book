@@ -18,6 +18,7 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
     user: req.session.currentUser,
     myBooks,
     readOnlyBooks,
+    selectedBook: {},
   };
   res.render("profile", data);
 });
@@ -33,6 +34,7 @@ router.get("/profile/:item", isLoggedIn, async (req, res, next) => {
       user: req.session.currentUser,
       myBooks,
       readOnlyBooks,
+      selectedBook: {},
     };
   } else if (item == "library") {
     // const { myBooks, readOnlyBooks } = await getBookCategories(_id);
@@ -41,6 +43,7 @@ router.get("/profile/:item", isLoggedIn, async (req, res, next) => {
       user: req.session.currentUser,
       myBooks,
       readOnlyBooks,
+      selectedBook: {},
     };
   }
   res.render("profile", data);

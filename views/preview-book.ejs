@@ -1,4 +1,32 @@
-<div class="Preview-Book">
+<!-- <div class="col d-flex justify-content-center mx-auto align-item-center "> -->
+<div class="card mb-3 justify-content-center mx-auto align-item-center" style="max-width: 65%; margin-top: 18rem">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <% if (book.cover) { %>
+      <img src="<%- book.cover %>" alt="Book Cover" class="img-fluid rounded-start" />
+      <% } else { %>
+      <img src="/images/cover_not_found.jpg" class="img-fluid rounded-start" />
+      <% } %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= book.title %></h5>
+        <% if (book.description) { %>
+        <p class="card-text"><%= book.description %></p>
+        <% } %>
+        <% book.links.forEach((link, index) => { %>
+        <p class="card-text"><small class="text-body-secondary">
+            <a href="<%- link.url %>" name="bookData" value=<%= book.author_name %> target="_blank"><%- link.title %></a>
+          </small></p>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+
+
+<!-- <div class="Preview-Book">
   <div class="grid-container">
     <div class="cover-description">
       <div class="cover-image">
@@ -28,4 +56,4 @@
       <% } %>
     </div>
   </div>
-</div>
+</div> -->
