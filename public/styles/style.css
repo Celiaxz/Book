@@ -130,7 +130,8 @@ body.active .wrapper .section {
   width: 100%;
 }
 
-.myBook {
+.myBook,
+.readOnlyBooks {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -138,7 +139,8 @@ body.active .wrapper .section {
   border-bottom: 1px solid #10558d;
 }
 
-.myBook:last-child {
+.myBook:last-child,
+.readOnlyBooks:last-child {
   border-bottom: unset;
 }
 
