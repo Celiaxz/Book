@@ -70,6 +70,10 @@ body {
   display: inline-block;
 }
 
+.sidebarLibrary {
+  padding-bottom: unset;
+}
+
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active {
   color: #0c7db1;
@@ -132,6 +136,10 @@ body.active .wrapper .section {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #10558d;
+}
+
+.myBook:last-child {
+  border-bottom: unset;
 }
 
 .edit,
