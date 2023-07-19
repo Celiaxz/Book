@@ -1,25 +1,64 @@
 
-<%- include('../partials/navbar.ejs') %>
-<div class="d-flex 
-align-items-center justify-content-center  py-4 ">
-  <div class="col-4 p-6">
-    <h1>Hello world </h1>
-    <h1 class="h3 mb-3 fw-normal">Log In</h1>
-    <main class="bg-primary w-100 m-auto ">
+<style>
+  body {
+    background-image: url("../images/signup_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    }
+    label.form-label {
+    color: white;
+  }
+  p.text-muted, a.text-body {
+    color: white !important;
+    font-size: 14px;
+  }
+</style>
+<div class="container-fluid mt-5">
+<div class="row">
+  <div class="col">
+    <div class="container-sm mb-2" style="max-width: 30%;">
       <form action="/login" method="POST">
-        <div class="form-floating">
-          <input required name="username" class="form-control">
-          <label for="floatingInput">Username:</label>
+        <div class="mb-2">
+          <input type="text" name="username" placeholder="username" class="form-control" required />
         </div>
-        <div class="form-floating">
-          <input type="password" required name="password" class="form-control">
-          <label for="floatingInput">Password:</label>
+        <div class="mb-2">
+          <input type="password" name="password" placeholder="password" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary w-100 py-2">Log In</button>
       </form>
-    </main>
+      <p class="text-center text-muted mt-1 mb-0">Not a member yet? <a href="/signup"
+        class="fw-bold text-body"><u>Make an account</u></a></p>
+      <%#!-- error message will be added here --%>
+      </form>
+    </div>
   </div>
 </div>
+</div>
+
+<div class="container-fluid mt-3">
+<div class="col">
+  <div class="container-sm mb-2" style="max-width: 30%;">
+    <div class="card text-white" style="background-color: rgba(70, 130, 167, 0.7); border-radius: 15px;">
+      <div class="card-body p-5">
+
+        <i class="fas fa-quote-left fa-2x mb-4"></i>
+
+        <p class="lead" style="font-size: 1.1rem;">““Be yourself; everyone else is already taken.”</p>
+
+        <hr>
+
+        <div class="d-flex justify-content-between">
+        <p class="mb-0" style="font-size: 0.9rem;">― Oscar Wilde</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 <% if (typeof errMessage !== "undefined") { %>
-<p><%= errMessage %></p>
-<% } %>
+  <p><%= errMessage %></p>
+  <% } %>
+  
+
+<%- include('../partials/footer.ejs') %>

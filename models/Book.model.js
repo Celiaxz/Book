@@ -2,12 +2,10 @@ const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
 const bookSchema = new Schema({
-  author: {
-    type: String,
-  },
+  author: String,
   title: String,
   genre: {
-    enum: ["Poetry, prose, Drama"],
+    enum: ["Action/Adventure, Biographies and Autobiographies, Cookbook, Crime, Drama, Essays, History, Horror, Mystery, Poetry, Romance, Science Fiction (Sci-Fi), Short Stories, Thriller"],
   },
   userId: {
     type: String,
@@ -18,7 +16,6 @@ const bookSchema = new Schema({
     default: true,
   },
   description: String,
-  publishingDate: Number,
   content: String,
 });
 

@@ -1,47 +1,55 @@
-<h1>Create a Book</h1>
-<form method="POST" action="/create-book">
-  <label for="author">Author:</label>
-  <input type="text" id="author" name="author" placeholder="Author Name or ID" required>
-  <br>
-  <label for="title">Title:</label>
-  <input type="text" id="title" name="title" required>
-  <br>
-  <label for="genre">Genre:</label>
-  <select id="genre" name="genre" required>
-    <option value="Poetry">Poetry</option>
-    <option value="Prose">Prose</option>
-    <option value="Drama">Drama</option>
-  </select>
-  <br>
-  <label for="description">Description:</label>
-  <textarea id="description" name="description" required></textarea>
-  <br>
-  <label for="publishingDate">Publishing Date:</label>
-  <input type="number" id="publishingDate" name="publishingDate" required>
-  <br>
-  <button type="submit">Create</button>
-</form>
-<!-- <form method="POST" action="/create-book" class="row  align-items-center">
-  <div class="form-floating mb-1">
-    <input type="text" class="form-control" id="floatingInput" placeholder="author" name="author">
-    <label for="floatingInput">Author</label>
-  </div>
-  <div class="form-floating mb-1">
-    <input type="text" class="form-control" id="floatingInput" placeholder="title" name="title">
-    <label for="floatingInput">Title</label>
-  </div>
-  <div class="form-floating mb-1">
-    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="genre">
-      <option selected>Genre</option>
-      <option value="1">Poetry</option>
-      <option value="2">Prose</option>
-      <option value="3">Drama</option>
-    </select>
-    <label for="floatingSelect">Genre</label>
-  </div>
-  <div class="form-floating mb-1">
-    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description"></textarea>
-    <label for="floatingTextarea">Description</label>
-  </div>
-  <button type="submit">Create</button>
-</form> -->
+<%- include('./partials/navbar.ejs') %><p>
+<h3>Create a Book</h3>
+
+  <style>
+    body {
+      background-image: url("../images/create-book_wallpaper.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      }
+      label.form-label, h3 {
+    color: white;
+    }
+  </style>
+
+<div class="container-lg">
+  <form method="POST" action="/create-book">
+    <div class="mb-3"> 
+      <label class="form-label"> Author </label>
+      <input type="text" id="author" name="author" placeholder="Pick a cool name or an alias" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label"> Title </label>
+      <input type="text" id="title" name="title" placeholder="Give your book a captivating title" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Genre</label>
+      <select class="form-select" id="genre" name="genre" aria-label="Book genres" required>
+        <option selected>What kind of book do you want to write?</option>
+        <option value="Action/Adventure">Action/Adventure</option>
+        <option value="Biographies and Autobiographies">Biographies and Autobiographies</option>
+        <option value="Cookbook">Cookbook</option>
+        <option value="Crime">Crime</option>
+        <option value="Drama">Drama</option>
+        <option value="Essays">Essays</option>
+        <option value="History">History</option>
+        <option value="Horror">Horror</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Poetry">Poetry</option>
+        <option value="Romance">Romance</option>
+        <option value="Science Fiction (Sci-Fi)">Science Fiction (Sci-Fi)</option>
+        <option value="Short Stories">Short Stories</option>
+        <option value="Thriller">Thriller</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"> What is it about? </label>
+      <textarea class="form-control" id="description" name="description" placeholder="Write a short description" rows="2"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+  
+
+<%- include('./partials/footer.ejs') %>
