@@ -11,6 +11,7 @@ const logger = require("morgan");
 // ℹ️ Needed when we deal with cookies (we will when dealing with authentication)
 // https://www.npmjs.com/package/cookie-parser
 const cookieParser = require("cookie-parser");
+const favicon = require("serve-favicon");
 
 // ℹ️ Needed to accept from requests from 'the outside'. CORS stands for cross origin resource sharing
 // unless the request if from the same domain, by default express wont accept POST requests
@@ -36,6 +37,8 @@ module.exports = (app) => {
 
   app.use(expressLayouts);
   app.use(express.static(path.join(__dirname, "..", "public")));
+  app.use(favicon(path.join(__dirname, "..", "public", "favicon.ico")));
+  //../public/favicon.ico
   // controls a very specific header to pass headers from the frontend
   app.use(
     cors({
