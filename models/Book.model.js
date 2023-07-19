@@ -5,7 +5,9 @@ const bookSchema = new Schema({
   author: String,
   title: String,
   genre: {
-    enum: ["Action/Adventure, Biographies and Autobiographies, Cookbook, Crime, Drama, Essays, History, Horror, Mystery, Poetry, Romance, Science Fiction (Sci-Fi), Short Stories, Thriller"],
+    enum: [
+      "Action/Adventure, Biographies and Autobiographies, Cookbook, Crime, Drama, Essays, History, Horror, Mystery, Poetry, Romance, Science Fiction (Sci-Fi), Short Stories, Thriller",
+    ],
   },
   userId: {
     type: String,
@@ -17,6 +19,10 @@ const bookSchema = new Schema({
   },
   description: String,
   content: String,
+  // favouriteBook: {
+  //   type: Boolean,
+  //   default: false,
+  // },
 });
 
 const Book = model("Book", bookSchema);

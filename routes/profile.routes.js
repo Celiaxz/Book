@@ -79,7 +79,7 @@ router.get("/profile/lock/:bookId", isLoggedIn, async (req, res, next) => {
       { new: true }
     );
   }
-  res.redirect("/profile/home");
+  res.redirect("/profile/book/" + bookId);
 });
 
 router.get("/profile/user/logout", isLoggedIn, async (req, res, next) => {

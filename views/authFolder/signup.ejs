@@ -1,20 +1,23 @@
 <form action="/signup" method="POST"></form>
 
-  <style>
-    body {
-      background-image: url("../images/signup_background.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      }
-      label.form-label {
-      color: white;
-    }
-    p.text-muted, a.text-body {
-    color: white !important;
-    font-size: 14px; 
+<style>
+  body {
+    background-image: url("../images/signup_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
   }
-  </style>
+
+  label.form-label {
+    color: white;
+  }
+
+  p.text-muted,
+  a.text-body {
+    color: white !important;
+    font-size: 14px;
+  }
+</style>
 </head>
 <div class="container-fluid mt-5">
   <div class="row">
@@ -38,9 +41,8 @@
           </div>
 
           <button type="submit" class="btn btn-primary w-100 py-2">Register</button>
-    <p class="text-center text-muted mt-1 mb-0">Already a member? <a href="/login"
-          class="fw-bold text-body"><u>Login here</u></a></p>
-        <%#!-- error message will be added here --%>
+          <p class="text-center text-muted mt-1 mb-0">Already a member? <a href="/login" class="fw-bold text-body"><u>Login here</u></a></p>
+          <%#!-- error message will be added here --%>
         </form>
       </div>
     </div>
@@ -60,12 +62,11 @@
           <hr>
 
           <div class="d-flex justify-content-between">
-          <p class="mb-0" style="font-size: 0.9rem;">― George R.R. Martin, A Game of Thrones</p>
+            <p class="mb-0" style="font-size: 0.9rem;">― George R.R. Martin, A Game of Thrones</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<%- include('../partials/footer.ejs') %>
-  
+  <%- include('../partials/footer.ejs') %>
