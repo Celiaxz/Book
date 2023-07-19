@@ -17,7 +17,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 350px;
   height: 100%;
   padding: 20px;
   transition: all 0.5s ease;
@@ -52,17 +52,19 @@ body {
   padding: 0;
 }
 
-.wrapper .sidebar ul li a {
+.wrapper .sidebar ul li a,
+.sidebarLibrary {
   display: block;
-  padding: 13px 30px;
+  padding: 13px 15px;
   border-bottom: 1px solid #10558d;
   color: rgb(241, 237, 237);
-  font-size: 16px;
+  font-size: 20px;
   position: relative;
   text-decoration: none;
 }
 
-.wrapper .sidebar ul li a .icon {
+.wrapper .sidebar ul li a .icon,
+.sidebarLibrary .icon {
   color: #dee4ec;
   max-width: 20px;
   display: inline-block;
@@ -87,8 +89,8 @@ body {
 }
 
 .wrapper .section {
-  width: calc(100% - 225px);
-  margin-left: 225px;
+  width: calc(100% - 350px);
+  margin-left: 350px;
   transition: all 0.5s ease;
 }
 
@@ -109,14 +111,14 @@ body {
   color: #a2ecff;
 }
 
-.wrapper .section .container {
+.wrapper .section .profileBody {
   margin: 30px;
   background: #fff;
   padding: 50px;
   line-height: 28px;
 }
 body.active .wrapper .sidebar {
-  left: -250px;
+  left: -350px;
 }
 
 body.active .wrapper .section {
@@ -129,16 +131,24 @@ body.active .wrapper .section {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #10558d;
 }
 
 .edit,
 .lock-icon {
   font-size: 20px !important;
   padding: 0 !important;
-  /* background-color: aqua; */
   padding: 10px !important;
+  border-bottom: unset !important;
 }
-/* librarysearchBok */
+
+.edit {
+  margin-top: 6px;
+}
+
+.bookTitle {
+  border-bottom: unset !important;
+}
 .book-searchMain {
   display: flex;
   flex-direction: column;
@@ -182,41 +192,6 @@ body.active .wrapper .section {
   /* padding-left: 1rem; */
   width: fit-content;
 }
-
-/* mediaquery searchBox */
-/* @media only screen and (max-width: 600px) {
-  .main {
-    padding: 1rem;
-  }
-  .main h1 {
-    text-align: center;
-  }
-  .searchBox {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-  }
-  .searchBox input {
-    flex: 1;
-    border-radius: 2rem;
-    width: 100%;
-    border: 1px transparent;
-    padding: 1rem;
-    font-size: 16px;
-  }
-  .searchBox input::after {
-    border: 1px solid rgb(205, 90, 90);
-  }
-  .searchBox button {
-    padding: 1rem 3rem;
-    border-radius: 2rem;
-    border: 1px transparent;
-    width: fit-content;
-  }
-} */
 
 /* book Search result */
 .mainBookSearch {
@@ -356,7 +331,14 @@ body.active .wrapper .section {
 
 .book-header {
   color: white;
-  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  padding: 13px 30px;
+  border-bottom: 1px solid #10558d;
+  color: rgb(241, 237, 237);
+  font-size: 20px;
+  /* position: relative; */
+  text-decoration: none;
 }
 
 /* user-home */
@@ -374,4 +356,17 @@ body.active .wrapper .section {
 
 .card-quote {
   margin-top: 20px;
+}
+
+.bookTitle span {
+  font-size: 16px;
+}
+
+.item {
+  margin-left: 5px;
+}
+
+.myLibrary {
+  margin-bottom: 1rem;
+  padding-left: 6px;
 }

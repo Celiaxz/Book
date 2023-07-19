@@ -1,16 +1,11 @@
 <ul class="myLibrary">
-  <p class="book-header">My Books</p>
-  <%-
-    console.log("MyBooks myLibrary: ", myBooks);
-    %>
+  <% if(!isReadOnly) { %>
   <% myBooks.forEach((book) => { %>
   <li class="myBook">
     <a class="bookTitle <%=  book._id === selectedBook._id  ? 'active': '' %>" href="/profile/book/<%= book._id %>">
       <span><%- book.title%></span>
-      <!-- <span ><i class="fas fa-pencil"></i></span> -->
     </a>
     <a class="edit" href="/profile/book/<%= book._id %>">
-      <!-- <span ><i class="fas fa-pencil"></i></span> -->
       <i class="material-symbols-outlined ">edit</i>
     </a>
     <a class="lock-icon" href="/profile/lock/<%= book._id %>">
@@ -18,7 +13,7 @@
     </a>
   </li>
   <% }) %>
-  <p class="book-header">Saved Books</p>
+  <% } else { %>
   <% readOnlyBooks.forEach((book) => { %>
   <li class="readOnlyBooks">
     <a class="bookTitle <%= book._id === selectedBook._id  ? 'active': '' %>" href="/profile/book/<%= book._id %>">
@@ -26,4 +21,5 @@
     </a>
   </li>
   <% }) %>
+  <% } %>
 </ul>

@@ -9,7 +9,7 @@
         </a>
       </div>
     </div>
-    <div class="container">
+    <div class="profileBody">
       <% if (active === "home") { %>
       <%- include ('./partials/homepage.ejs') %>
       <% } %>
@@ -30,9 +30,20 @@
           <span class="icon"><i class="fas fa-home"></i></span>
           <span class="item">Home</span>
         </a>
-        <% if (myBooks.length > 0 || readOnlyBooks.length > 0) { %>
+        <% if (myBooks.length > 0 ) { %>
         <div class="sidebarLibrary">
-          <%- include('./partials/sidebar-library.ejs', {myBooks, readOnlyBooks}) %>
+          <i class="fa fa-book icon" aria-hidden="true"></i>
+          <!-- <i class="material-symbols-outlined icon">library_books</i> -->
+          <span class="item">My Books</span>
+          <%- include('./partials/sidebar-library.ejs', {myBooks, isReadOnly: false}) %>
+        </div>
+        <% } %>
+        <% if ( readOnlyBooks.length > 0) { %>
+        <div class="sidebarLibrary">
+          <i class="fa fa-book icon" aria-hidden="true"></i>
+          <!-- <i class="material-symbols-outlined icon">library_books</i> -->
+          <span class="item">Saved Books</span>
+          <%- include('./partials/sidebar-library.ejs', {readOnlyBooks, isReadOnly: true}) %>
         </div>
         <% } %>
       </li>
