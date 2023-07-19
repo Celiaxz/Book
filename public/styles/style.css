@@ -371,3 +371,7 @@ body.active .wrapper .section {
   color: black;
   font-size: 1.2em;
 }
+
+.card-quote {
+  margin-top: 20px;
+}
