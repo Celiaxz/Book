@@ -363,3 +363,11 @@ body.active .wrapper .section {
 .user-Home {
   margin-bottom: 50px;
 }
+.user-Home h1 {
+  color: black;
+  font-size: 4em;
+}
+.user-Home p {
+  color: black;
+  font-size: 1.2em;
+}
