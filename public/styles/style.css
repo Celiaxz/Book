@@ -358,3 +358,8 @@ body.active .wrapper .section {
   color: white;
   padding-top: 5px;
 }
+
+/* user-home */
+.user-Home {
+  margin-bottom: 50px;
+}
