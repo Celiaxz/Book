@@ -1,20 +1,71 @@
-<%- include('../partials/navbar.ejs') %>
-<h2>Signup</h2>
-<form action="/signup" method="POST">
+<form action="/signup" method="POST"></form>
 
-  <label> Username
-    <input type="text" name="username" placeholder="input username" required />
-  </label>
 
-  <label> Email
-    <input type="email" name="email" placeholder="@email" required />
-  </label>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-image: url("../images/signup_background.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      }
+      label.form-label {
+      color: white;
+    }
+  </style>
+</head>
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="container-sm mb-2" style="max-width: 30%;">
+        <form action="/signup" method="POST">
+          <div class="mb-3">
+            <label class="form-label"> Choose a username </label>
+            <input type="text" name="username" placeholder="username" class="form-control" required />
+          </div>
 
-  <label> Password
-    <input type="password" name="password" required />
-  </label>
+          <div class="mb-1">
+            <label class="form-label"> Email </label>
+            <input type="email" name="email" placeholder="@email" class="form-control" aria-describedby="emailHelp" required />
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
 
-  <button type="submit">Create account</button>
+          <div class="mb-2">
+            <label class="form-label"> Password </label>
+            <input type="password" name="password" placeholder="password" class="form-control" required />
+          </div>
 
-  <%#!-- error message will be added here --%>
-</form>
+        <button type="submit" class="btn btn-outline-info">Submit</button>
+        <%#!-- error message will be added here --%>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-3">
+  <div class="col">
+    <div class="container-sm mb-2" style="max-width: 30%;">
+      <div class="card text-white" style="background-color: rgba(70, 130, 167, 0.7); border-radius: 15px;">
+        <div class="card-body p-5">
+
+          <i class="fas fa-quote-left fa-2x mb-4"></i>
+
+          <p class="lead" style="font-size: 1.1rem;">“Once you’ve accepted your flaws, no one can use them against you.”</p>
+
+          <hr>
+
+          <div class="d-flex justify-content-between">
+          <p class="mb-0" style="font-size: 0.9rem;">― George R.R. Martin, A Game of Thrones</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+<%- include('../partials/footer.ejs') %>
+  
