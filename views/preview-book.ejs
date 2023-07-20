@@ -1,5 +1,7 @@
+<%- include('./partials/navbar.ejs') %>
+
 <div class="preview">
-  <div class="card mb-3 justify-content-center mx-auto align-item-center" style="max-width: 65%; background-color: rgba(223, 234, 234, 0.5); ">
+  <div class="card mb-3 justify-content-center mx-auto align-item-center" style="max-width: 65%; background-color: rgba(147, 150, 150, 0.5); ">
     <div class="row g-0">
       <div class="col-md-4">
         <% if (book.cover) { %>
@@ -16,7 +18,7 @@
           <% } %>
           <% book.links.forEach((link, index) => { %>
           <p class="card-text"><small class="text-body-secondary">
-              <a href="<%- link.url %>" name="bookData" value=<%= book.author_name %> target="_blank"><%- link.title %></a>
+              <a href="<%- link.url %>" name="bookData" value=<%= book.author_name %> target="_blank" style="color: black; font-weight: bold;"><%- link.title %></a>
             </small></p>
           <% }) %>
         </div>
