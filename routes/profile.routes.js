@@ -115,21 +115,6 @@ router.post("/create-book", async (req, res) => {
   }
 });
 
-// // book details and writing page
-// router.get("/writing/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params;
-
-//     const book = await Book.findById(id).populate("author");
-//     //able to create books with the correct author reference and
-//     //retrieve also authors  information when rending the writing view
-//     // console.log("BOOK: ", data);
-//     res.render("writing", book);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });
-
 //Update Book
 router.post("/book/:id/update", async (req, res) => {
   try {

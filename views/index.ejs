@@ -1,69 +1,69 @@
 <%- include('./partials/navbar.ejs') %><p>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-image: url("../images/homepage_wallpaper1.jpeg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 100vh;
-      }
-      .overlay {
-        position: absolute;
-        min-height: 100%;
-        min-width: 100%;
-        left: 0;
-        top: 0;
-        background: rgba(0, 0, 0, 0.6);
-      }
-      .description {
-        left: 50%;
-        position: absolute;
-        top: 40%; /* Adjust this value to move the description up or down */
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
-      .description h1 {
-        color: #c0ccd2;
-      }
-      .description p {
-        color: #f1f8fc;
-        font-size: 1.3rem;
-        line-height: 1.5;
-      }
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: url("../images/homepage_wallpaper1.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+    }
 
+    .overlay {
+      position: absolute;
+      min-height: 100%;
+      min-width: 100%;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
 
-      
-    </style>
-    
-    <div class="overlay"></div>
-    
-    <div class="container text-center">
-        <div class="row">
-            <div class="description">
-                <h1>Welcome Bookish Explorer</h1>
-                <p>Here you can read your favourite books and also show the world your amazing books and short stories</p>
-                <a class="btn btn-outline-light" href="/signup">Start your journey</a>
-            </div>
-        </div>
-        
+    .description {
+      left: 50%;
+      position: absolute;
+      top: 40%;
+      /* Adjust this value to move the description up or down */
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .description h1 {
+      color: #c0ccd2;
+    }
+
+    .description p {
+      color: #f1f8fc;
+      font-size: 1.3rem;
+      line-height: 1.5;
+    }
+  </style>
+<div class="overlay"></div>
+<div class="container text-center">
+  <div class="row">
+    <div class="description">
+      <h1>Welcome Bookish Explorer</h1>
+      <p>Here you can read your favourite books and also show the world your amazing books and short stories</p>
+      <a class="btn btn-outline-light" href="/signup">Start your journey</a>
     </div>
-    
-    <%- include('./partials/footer.ejs') %>
+  </div>
+
+</div>
+
+<%- include('./partials/footer.ejs') %>
 
 
-    <div class="row">
-        <div class="container-sm" style="max-width: 40%; margin-bottom: 65px">
-            <div class="card text-white" style="background-color: rgba(53, 54, 55, 0.5); border-radius: 25px;">
-              <div class="card-body p-5">
-                <i class="fas fa-quote-left fa-2x mb-2"></i>
-                <p class="lead" style="font-size: 1.0rem;">“Don't be satisfied with stories, how things have gone with others. Unfold your own myth.”</p>
-                <hr>
-                <div class="d-flex justify-content-between">
-                  <p class="mb-0" style="font-size: 0.8rem;">― Rumi, The Essential Rumi</p>
-                </div>
-              </div>
-            </div>
+<div class="row">
+  <div class="container-sm" style="max-width: 40%; margin-bottom: 65px">
+    <div class="card text-white" style="background-color: rgba(53, 54, 55, 0.5); border-radius: 25px;">
+      <div class="card-body p-5">
+        <i class="fas fa-quote-left fa-2x mb-2"></i>
+        <p class="lead" style="font-size: 1.0rem;">“Don't be satisfied with stories, how things have gone with others. Unfold your own myth.”</p>
+        <hr>
+        <div class="d-flex justify-content-between">
+          <p class="mb-0" style="font-size: 0.8rem;">― Rumi, The Essential Rumi</p>
         </div>
+      </div>
     </div>
+  </div>
+</div>
