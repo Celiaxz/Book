@@ -1,107 +1,108 @@
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <!-- to load the editor library (Quill) -->
 
+
 <% if (!isReadOnly) { %>
-<h1>Start Writing</h1>
-<br>
+<h2>Start Writing</h2>
 <% } %>
-
-<h2><%= book.title %></h2>
-
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
 <br>
+<h4><%= book.title %></h4>
 <% if (!isReadOnly) { %>
-<form method="POST" action="/book/<%= book._id %>/update">
-  <input type="text" id="title" name="title" value="<%= book.title %>" required>
-  <button type="submit">Update Title</button>
-</form>
-<form method="POST" action="/book/<%= book._id %>/delete">
-  <button type="submit">Delete Book</button>
-</form>
+  <div class="container-left" style="max-width: 30%; margin-top: 30px">
+    <form method="POST" action="/book/<%= book._id %>/update">
+        <div class="mb-2">
+            <input type="text" id="title" name="title" value="<%= book.title %>" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-outline-secondary">Update Title</button>
+    </form>
+</div>
+<div class="container-left" style="max-width: 30%; margin-top: 10px">
+  <form method="POST" action="/book/<%= book._id %>/delete">
+      <button type="submit" class="btn btn-outline-secondary">Delete Book</button>
+  </form>
+</div>
 <br>
 <% } %>
 <!-- this is our editor -->
-<form method="POST" action="/book/<%= book._id %>/save">
-  <!-- This is the DOM element -->
-  <div id="editor">
-    <p>Hello World!</p>
-    <p>Some initial <strong>bold</strong> text</p>
-  </div>
-  <input name="data" type="hidden" value="<%= book.content%>"> <!-- set the hidden input value to the book content-->
-  <% if (!isReadOnly) { %>
-  <button type="submit" onclick="fetchEditorText()">Save</button>
-  <% } %>
+  <div class="form-group">
+    <form method="POST" action="/book/<%= book._id %>/update">
+      <!-- This is the DOM element -->
+        <label>Start writing</label>
+        <textarea class="form-control" id="editor" placeholder="Here..." rows="10"></textarea>
+        <input name="data" type="hidden" value="<%= book.content%>">
+        <% if (!isReadOnly) { %>
+        <button type="submit" class="btn btn-outline-secondary" style="margin-top: 10px">Submit</button>
+        <% } %>
   <!-- run javascript inside ejs with script tag -->
-  <script>
-    const toolbarOptions = [
-      [{
-        'font': []
-      }],
-      ['bold', 'italic', 'underline', 'strike'], // toggled buttons
-      ['blockquote', 'code-block'],
-      [{
-        'list': 'ordered'
-      }, {
-        'list': 'bullet'
-      }],
-      [{
-        'script': 'sub'
-      }, {
-        'script': 'super'
-      }], // superscript/subscript
-      [{
-        'indent': '-1'
-      }, {
-        'indent': '+1'
-      }], // outdent/indent
-      [{
-        'direction': 'rtl'
-      }], // text direction
-      [{
-        'size': ['small', false, 'large', 'huge']
-      }], // custom dropdown
-      [{
-        'header': [1, 2, 3, 4, 5, 6, false]
-      }],
-      [{
-        'color': []
-      }, {
-        'background': []
-      }], // dropdown with defaults from theme
-      [{
-        'align': []
-      }],
-      ['clean'] // remove formatting button
-    ];
+    <script>
+      const toolbarOptions = [
+        [{
+          'font': []
+        }],
+        ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+        ['blockquote', 'code-block'],
+        [{
+          'list': 'ordered'
+        }, {
+          'list': 'bullet'
+        }],
+        [{
+          'script': 'sub'
+        }, {
+          'script': 'super'
+        }], // superscript/subscript
+        [{
+          'indent': '-1'
+        }, {
+          'indent': '+1'
+        }], // outdent/indent
+        [{
+          'direction': 'rtl'
+        }], // text direction
+        [{
+          'size': ['small', false, 'large', 'huge']
+        }], // custom dropdown
+        [{
+          'header': [1, 2, 3, 4, 5, 6, false]
+        }],
+        [{
+          'color': []
+        }, {
+          'background': []
+        }], // dropdown with defaults from theme
+        [{
+          'align': []
+        }],
+        ['clean'] // remove formatting button
+      ];
 
-    function fetchEditorText() {
-      // <!--Here the class ql - editor is defined by quill js, we can access the inner html from here to retrieve the text-- >
-      const editorText = document.getElementsByClassName('ql-editor')[0].innerHTML
-      const hiddenInput = document.querySelector('input[name=data]'); // get our hidden input value and set the editorText on it.
-      hiddenInput.value = editorText // the value we set will be availabe to our route in req.body.data
-    };
-    const readOnly = <%= isReadOnly %>;
+      function fetchEditorText() {
+        // <!--Here the class ql - editor is defined by quill js, we can access the inner html from here to retrieve the text-- >
+        const editorText = document.getElementsByClassName('ql-editor')[0].innerHTML
+        const hiddenInput = document.querySelector('input[name=data]'); // get our hidden input value and set the editorText on it.
+        hiddenInput.value = editorText // the value we set will be availabe to our route in req.body.data
+      };
+      const readOnly = <%= isReadOnly %>;
 
-    if (readOnly) {
-      const quill = new Quill('#editor', {
-        readOnly: readOnly
-      });
-    } else {
-      const quill = new Quill('#editor', {
-        theme: 'snow',
-        modules: {
-          toolbar: toolbarOptions
-        }
-      });
-    }
+      if (readOnly) {
+        const quill = new Quill('#editor', {
+          readOnly: readOnly
+        });
+      } else {
+        const quill = new Quill('#editor', {
+          theme: 'snow',
+          modules: {
+            toolbar: toolbarOptions
+          }
+        });
+      }
 
-    // the hidden Input now contains the book content, fetch the content and set it as the content of the editor 
-    const hiddenInput = document.querySelector('input[name=data]');
-    document.getElementsByClassName('ql-editor')[0].innerHTML = hiddenInput.value;
-    hiddenInput.value = ""; // clear the hidden input value as we no longer need it
-  </script>
-</form>
-</body>
-
-</html>
+      // the hidden Input now contains the book content, fetch the content and set it as the content of the editor 
+      const hiddenInput = document.querySelector('input[name=data]');
+      document.getElementsByClassName('ql-editor')[0].innerHTML = hiddenInput.value;
+      hiddenInput.value = ""; // clear the hidden input value as we no longer need it
+    </script>
+  </form>
+</div>
+<%- include('../partials/footer.ejs') %>
