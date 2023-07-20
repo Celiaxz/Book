@@ -13,7 +13,9 @@ body {
 
 .wrapper .sidebar {
   overflow-y: auto;
-  background: rgb(5, 68, 104);
+  /* background: rgb(5, 68, 104); */
+  /* background: rgb(14, 1, 1); */
+  background: rgb(39, 37, 37);
   position: fixed;
   top: 0;
   left: 0;
@@ -40,10 +42,11 @@ body {
   color: #ffffff;
   /* margin: 10px 0 5px; */
   margin: 10px auto;
+  font-weight: 800;
 }
 
 .wrapper .sidebar .profile p {
-  color: rgb(206, 240, 253);
+  color: rgb(177, 197, 205);
   font-size: 14px;
 }
 
@@ -56,7 +59,7 @@ body {
 .sidebarLibrary {
   display: block;
   padding: 13px 15px;
-  border-bottom: 1px solid #10558d;
+  border-bottom: 1px solid rgb(26, 3, 3);
   color: rgb(241, 237, 237);
   font-size: 20px;
   position: relative;
@@ -76,15 +79,18 @@ body {
 
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active {
-  color: #0c7db1;
+  /* color: #0c7db1; */
+  color: #242222;
 
   background: white;
-  border-right: 2px solid rgb(5, 68, 104);
+
+  border-bottom: 2px solid rgb(26, 3, 3);
 }
 
 .wrapper .sidebar ul li a:hover .icon,
 .wrapper .sidebar ul li a.active .icon {
-  color: #0c7db1;
+  /* color: #0c7db1; */
+  color: #242222;
 }
 
 .wrapper .sidebar ul li a:hover:before,
@@ -99,7 +105,7 @@ body {
 }
 
 .wrapper .section .top_navbar {
-  background: rgb(7, 105, 185);
+  background: rgb(26, 3, 3);
   height: 50px;
   display: flex;
   align-items: center;
@@ -112,7 +118,7 @@ body {
 }
 
 .wrapper .section .top_navbar .hamburger a:hover {
-  color: #a2ecff;
+  color: #242222;
 }
 
 .wrapper .section .profileBody {
@@ -136,7 +142,7 @@ body.active .wrapper .section {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #10558d;
+  border-bottom: 1px solid rgb(26, 3, 3);
 }
 
 .myBook:last-child,
@@ -168,11 +174,16 @@ body.active .wrapper .section {
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-  background-color: lightgray;
+  background-color: rgb(27, 26, 26);
 }
-.book-searchMain,
+.book-searchMain {
+  background-image: url("../images/book_search1.jpeg");
+  background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
 .book-search {
-  color: black;
+  background-color: rgba(85, 86, 86, 0.5);
   font-weight: 800;
 }
 .searchBox {
@@ -183,13 +194,13 @@ body.active .wrapper .section {
   flex: 1;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
-  border-top: 5px solid darkgray;
-  border-bottom: 5px solid darkgray;
+  border-top: 5px solid rgba(35, 35, 35, 0.3);
+  border-bottom: 5px solid rgba(35, 35, 35, 0.3);
   border-right: none;
-  border-left: 5px solid darkgray;
+  border-left: 5px solid rgba(35, 35, 35, 0.3);
   padding: 2rem;
   font-size: 16px;
-  background-color: transparent;
+  background-color: 0.6;
 }
 
 .searchBox button {
@@ -198,19 +209,20 @@ body.active .wrapper .section {
   border-bottom-right-radius: 2rem;
   border: 1px transparent;
   color: white;
-  background-color: #0d6efd;
+  background-color: rgba(85, 86, 86, 0.5);
   /* padding-left: 1rem; */
   width: fit-content;
 }
 
 /* book Search result */
 .mainBookSearch {
-  color: #ffffff;
+  color: #c9c7c7;
   min-height: 100vh;
   background-color: black;
   padding: 10px;
 }
-.mainBookSearch h1 {
+.book-searchMain h1 {
+  color: #b4b3b3;
   margin-bottom: 2rem;
 }
 .book-search-result {
@@ -249,7 +261,7 @@ body.active .wrapper .section {
   margin-top: 10px;
   padding: 8px 16px;
   border: none;
-  background-color: #0d6efd;
+  background-color: rgb(24, 14, 14);
   color: #fff;
   cursor: pointer;
   text-decoration: none;
@@ -331,6 +343,11 @@ body.active .wrapper .section {
 }
 
 /* preview style */
+.preview {
+  background-color: #111213;
+  min-height: 100vh;
+  padding: 20px;
+}
 .card-title {
   font-size: 3rem;
 }
@@ -386,3 +403,17 @@ body.active .wrapper .section {
   z-index: 1000; /* Set a higher z-index value */
   background-color: #111213;
 }
+
+
+.link-white-frame {
+  border-color: white;
+}
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+

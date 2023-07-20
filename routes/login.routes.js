@@ -2,11 +2,9 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const { isLoggedOut } = require("../middlewares/secure-routes.middlewear");
-
 router.get("/login", isLoggedOut, (req, res) => {
   res.render("authFolder/login");
 });
-
 router.post("/login", isLoggedOut, async (req, res) => {
   const userLogin = req.body;
   try {
