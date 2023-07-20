@@ -1,6 +1,8 @@
-# Bookish Explorer 💚
+# Bookish Explorer :books: :pencil2:
 
-## [Play Game](https://celiaxz.github.io/Mossy-Dive-Game/) :)
+![Alt Text](/public/images/navbar_logo.png)
+
+## [Visit app](https://celiaxz.github.io/Mossy-Dive-Game/) :)
 
 # Description
 
