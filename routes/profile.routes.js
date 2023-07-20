@@ -2,6 +2,7 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const Book = require("../models/Book.model");
+const uploader = require('../config/cloudinary.config.js');
 
 const {
   isLoggedIn,
@@ -91,6 +92,27 @@ router.get("/profile/user/delete", isLoggedIn, async (req, res, next) => {
   await Book.deleteMany({ userId: _id });
   delete req.session.currentUser;
   res.redirect("/");
+});
+
+
+
+router.post("/profile/image", uploader.single("imageUrl"), isLoggedIn, async (req, res) => {
+  try {
+    const userId = req.session.currentUser._id;
+    const userData = await User.findById(userId);
+
+    if (req.file) {
+      const imageUrl = req.file.path;
+      userData.imageUrl = imageUrl;
+    }
+
+    await userData.save();
+
+    res.redirect("/profile");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Error updating profile image" });
+  }
 });
 
 //Create book
