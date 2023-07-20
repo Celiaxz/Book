@@ -344,16 +344,24 @@ body.active .wrapper .section {
 
 /* preview style */
 .preview {
-  background-color: #111213;
-  min-height: 100vh;
-  padding: 20px;
+    background-image: url("../images/homepage_wallpaper1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 20px;
 }
 .card-title {
-  font-size: 3rem;
+  color: rgb(8, 8, 8);
+  font-size: 2.5rem;
 }
 
 .card-text {
-  font-size: 1.2rem;
+  color: rgb(7, 7, 7);
+  font-size: 1.0rem;
+}
+
+card.body {
+  font-size: 1.3rem;
 }
 
 .book-header {
