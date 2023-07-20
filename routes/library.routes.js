@@ -7,24 +7,6 @@ router.get("/library", isLoggedIn, (req, res) => {
   res.render("bookSearch");
 });
 
-// router.get("/library", async (req, res) => {
-//   try {
-//     const searchTerm = req.query.title;
-//     console.log("searchTerm:", req.query.title);
-//     const url = "https://openlibrary.org/search.json?title=";
-
-//     // console.log("request.query: ", request.query);
-
-//     const response = await axios.get(url);
-//     console.log("received data: ", response);
-//     // const books = response.data.docs;
-//     // console.log("error ocurred while finding books: ", books);
-//     // res.render("booksearch", { books });
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });
-
 router.post("/library", isLoggedIn, async (req, res, next) => {
   try {
     // const myrequest = req.body;
