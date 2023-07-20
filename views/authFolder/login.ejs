@@ -15,46 +15,44 @@
   }
 </style>
 <div class="container-fluid mt-5">
-<div class="row">
-  <div class="col">
-    <div class="container-sm mb-2" style="max-width: 30%;">
+  <div class="row">
+    <div class="container-sm" style="max-width: 30%; margin-top: 85px">
       <form action="/login" method="POST">
-        <div class="mb-2">
-          <input type="text" name="username" placeholder="username" class="form-control" required />
-        </div>
-        <div class="mb-2">
-          <input type="password" name="password" placeholder="password" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-primary w-100 py-2">Log In</button>
+      <div class="mb-2">
+      <input type="text" name="username" placeholder="username" class="form-control" required />
+      </div>
+      <div class="mb-2">
+      <input type="password" name="password" placeholder="password" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100 py-2">Log In</button>
       </form>
       <p class="text-center text-muted mt-1 mb-0">Not a member yet? <a href="/signup"
-        class="fw-bold text-body"><u>Make an account</u></a></p>
+      class="fw-bold text-body"><u>Make an account</u></a></p>
       <%#!-- error message will be added here --%>
       </form>
     </div>
   </div>
-</div>
-</div>
 
-<div class="container-fluid mt-3">
-<div class="col">
-  <div class="container-sm mb-2" style="max-width: 30%;">
-    <div class="card text-white" style="background-color: rgba(70, 130, 167, 0.7); border-radius: 15px;">
-      <div class="card-body p-5">
+  <div class="row">
+    <div class="container-sm" style="max-width: 30%; margin-top: 45px">
+      <div class="card text-white" style="background-color: rgba(70, 130, 167, 0.7); border-radius: 15px;">
+        <div class="card-body p-5">
 
         <i class="fas fa-quote-left fa-2x mb-4"></i>
 
-        <p class="lead" style="font-size: 1.1rem;">““Be yourself; everyone else is already taken.”</p>
+        <p class="lead" style="font-size: 1.1rem;">“Be yourself; everyone else is already taken.”</p>
 
         <hr>
 
         <div class="d-flex justify-content-between">
         <p class="mb-0" style="font-size: 0.9rem;">― Oscar Wilde</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
+
+
 
 <% if (typeof errMessage !== "undefined") { %>
   <p><%= errMessage %></p>

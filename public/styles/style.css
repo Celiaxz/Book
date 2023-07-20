@@ -380,3 +380,9 @@ body.active .wrapper .section {
   margin-bottom: 1rem;
   padding-left: 6px;
 }
+
+.navbar {
+  position: relative; /* Add this line to make the z-index work */
+  z-index: 1000; /* Set a higher z-index value */
+  background-color: #111213;
+}
