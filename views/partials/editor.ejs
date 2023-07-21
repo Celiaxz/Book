@@ -26,13 +26,13 @@
 <% } %>
 <!-- this is our editor -->
 <div class="form-group">
-  <form method="POST" action="/book/<%= book._id %>/update">
+  <form method="POST" action="/book/<%= book._id %>/save">
     <!-- This is the DOM element -->
     <label>Start writing</label>
     <div id="editor"></div>
     <input name="data" type="hidden" value="<%= book.content%>"> <!-- set the hidden input value to the book content-->
     <% if (!isReadOnly) { %>
-    <button type="submit" class="btn btn-outline-secondary" style="margin-top: 10px">Submit</button>
+    <button type="submit" class="btn btn-outline-secondary" onclick="fetchEditorText()" style="margin-top: 10px">Save</button>
     <% } %>
     <!-- run javascript inside ejs with script tag -->
     <script>
