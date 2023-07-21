@@ -66,6 +66,8 @@ Bookish Explorer is a user-friendly web app built with Node.js, Express, and Mon
 
 ### Slides
 
+[Link](https://docs.google.com/presentation/d/1jaDVyQV-SCN0Qslb81hXycqp5NBT0bWU2ipEuLV7u_g/edit?usp=sharing)
+
 ### Deploy
 
 [Link](https://bookish-explorer.adaptable.app/)
