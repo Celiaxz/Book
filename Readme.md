@@ -1,6 +1,7 @@
 # Bookish Explorer :books: :pencil2:
 
 ![Alt Text](/public/images/navbar_logo.png)
+
 Welcome to Bookish Explorer, where creativity knows no bounds! 🌌 Unleash your inner writer and dive into a world of endless possibilities. This is not just your ordinary writing app; it's your personal sanctuary for penning down your literary masterpieces. 🖋️✨
 
 ## [Visit app](https://bookish-explorer.adaptable.app/) :)
