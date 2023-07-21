@@ -121,6 +121,10 @@ body {
   color: #242222;
 }
 
+.profileBody {
+  background: rgba(85, 86, 86, 0.5);
+}
+
 .wrapper .section .profileBody {
   margin: 30px;
   background: #fff;
@@ -369,7 +373,7 @@ card.body {
   display: flex;
   flex-direction: row;
   padding: 13px 30px;
-  border-bottom: 1px solid #10558d;
+  border-bottom: 1px solid #43484d;
   color: rgb(241, 237, 237);
   font-size: 20px;
   /* position: relative; */
@@ -425,3 +429,16 @@ card.body {
   background: rgba(0, 0, 0, 0.6);
 }
 
+.bg-light {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(5, 5, 5, 0.9);
+  text-align: right;
+  padding: 0px;
+}
+
+body {
+  margin-bottom: 40px;
+}
