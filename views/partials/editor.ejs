@@ -28,7 +28,6 @@
 <div class="form-group">
   <form method="POST" action="/book/<%= book._id %>/save">
     <!-- This is the DOM element -->
-    <label>Start writing</label>
     <div id="editor"></div>
     <input name="data" type="hidden" value="<%= book.content%>"> <!-- set the hidden input value to the book content-->
     <% if (!isReadOnly) { %>
