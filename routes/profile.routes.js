@@ -3,10 +3,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const Book = require("../models/Book.model");
 
-const {
-  isLoggedIn,
-  isLoggedOut,
-} = require("../middlewares/secure-routes.middlewear");
+const { isLoggedIn } = require("../middlewares/secure-routes.middlewear");
 
 router.get("/profile", isLoggedIn, async (req, res, next) => {
   const { _id } = req.session.currentUser;
@@ -37,7 +34,6 @@ router.get("/profile/:item", isLoggedIn, async (req, res, next) => {
       selectedBook: {},
     };
   } else if (item == "library") {
-    // const { myBooks, readOnlyBooks } = await getBookCategories(_id);
     data = {
       active: "library",
       user: req.session.currentUser,

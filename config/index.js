@@ -38,7 +38,6 @@ module.exports = (app) => {
   app.use(expressLayouts);
   app.use(express.static(path.join(__dirname, "..", "public")));
   app.use(favicon(path.join(__dirname, "..", "public", "favicon.ico")));
-  //../public/favicon.ico
   // controls a very specific header to pass headers from the frontend
   app.use(
     cors({

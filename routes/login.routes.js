@@ -19,14 +19,11 @@ router.post("/login", isLoggedOut, async (req, res) => {
         console.log("Incorect password or username");
         res.render("authFolder/login", {
           errMessage: "Incorect password or username",
-          // res.render("authFolder/login", {username : currentUser.username, errorMessage})
         });
       }
     } else {
       console.log("No user");
       res.render("authFolder/login", { errMessage: "User doesnt exsist" });
-
-      // res.render("auth/login", {username : currentUser.username, errorMessage})
     }
   } catch (error) {
     console.log(error);

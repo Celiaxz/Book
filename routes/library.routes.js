@@ -9,13 +9,10 @@ router.get("/library", isLoggedIn, (req, res) => {
 
 router.post("/library", isLoggedIn, async (req, res, next) => {
   try {
-    // const myrequest = req.body;
-    // const urlString = url + myrequest.bookTitle;
     const searchTerm = req.body.bookTitle;
     const searchUrl = `${url}${searchTerm}`;
     console.log("my searchUrl: ", searchUrl);
     const bookSearch = await axios.get(searchUrl);
-    // console.log("my bookSearch: ", bookSearch);
     const books = bookSearch.data.docs.map((book) => ({
       title: book.title,
       key: book.key.split("/")[2],
@@ -26,7 +23,6 @@ router.post("/library", isLoggedIn, async (req, res, next) => {
       coverId: book.cover_i,
       author_name: book.author_name ? book.author_name.join(", ") : undefined,
     }));
-    // console.log("books: ", books);
     res.render("books-search-result", { books });
   } catch (err) {
     console.log("something seems to be happening here: ", err);
@@ -54,4 +50,3 @@ router.get("/library/:key/:coverId", isLoggedIn, async (req, res) => {
   } catch (error) {}
 });
 module.exports = router;
-//http://openlibrary.org${book.preview_url}
