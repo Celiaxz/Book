@@ -9,32 +9,32 @@
 <br>
 <h4><%= book.title %></h4>
 <% if (!isReadOnly) { %>
-  <div class="container-left" style="max-width: 30%; margin-top: 30px">
-    <form method="POST" action="/book/<%= book._id %>/update">
-        <div class="mb-2">
-            <input type="text" id="title" name="title" value="<%= book.title %>" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-outline-secondary">Update Title</button>
-    </form>
+<div class="container-left" style="max-width: 30%; margin-top: 30px">
+  <form method="POST" action="/book/<%= book._id %>/update">
+    <div class="mb-2">
+      <input type="text" id="title" name="title" value="<%= book.title %>" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-outline-secondary">Update Title</button>
+  </form>
 </div>
 <div class="container-left" style="max-width: 30%; margin-top: 10px">
   <form method="POST" action="/book/<%= book._id %>/delete">
-      <button type="submit" class="btn btn-outline-secondary">Delete Book</button>
+    <button type="submit" class="btn btn-outline-secondary">Delete Book</button>
   </form>
 </div>
 <br>
 <% } %>
 <!-- this is our editor -->
-  <div class="form-group">
-    <form method="POST" action="/book/<%= book._id %>/update">
-      <!-- This is the DOM element -->
-        <label>Start writing</label>
-        <textarea class="form-control" id="editor" placeholder="Here..." rows="10"></textarea>
-        <input name="data" type="hidden" value="<%= book.content%>">
-        <% if (!isReadOnly) { %>
-        <button type="submit" class="btn btn-outline-secondary" style="margin-top: 10px">Submit</button>
-        <% } %>
-  <!-- run javascript inside ejs with script tag -->
+<div class="form-group">
+  <form method="POST" action="/book/<%= book._id %>/update">
+    <!-- This is the DOM element -->
+    <label>Start writing</label>
+    <div id="editor"></div>
+    <input name="data" type="hidden" value="<%= book.content%>"> <!-- set the hidden input value to the book content-->
+    <% if (!isReadOnly) { %>
+    <button type="submit" class="btn btn-outline-secondary" style="margin-top: 10px">Submit</button>
+    <% } %>
+    <!-- run javascript inside ejs with script tag -->
     <script>
       const toolbarOptions = [
         [{
